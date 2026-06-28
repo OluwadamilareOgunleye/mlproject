@@ -52,13 +52,12 @@ class DataIngestion:
             raise CustomException(e, sys)
         
 
-if __name__ == "__main__":
-    obj = DataIngestion()
-    train_data,test_data = obj.initiate_data_ingestion()
+if __name__=="__main__":
+    obj=DataIngestion()
+    train_data,test_data=obj.initiate_data_ingestion()
 
-    data_transformation = DataTransformation()
-    train_arr, test_arr, _ = data_transformation.initiate_data_transformation(train_data, test_data)
+    data_transformation=DataTransformation()
+    train_arr,test_arr,_=data_transformation.initiate_data_transformation(train_data,test_data)
 
-    modeltrainer = ModelTrainer()
-    r2_square = modeltrainer.initiate_model_trainer(train_arr, test_arr)
-    print(f"R2 square value: {r2_square}")
+    modeltrainer=ModelTrainer()
+    print(modeltrainer.initiate_model_trainer(train_arr,test_arr))
